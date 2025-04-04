@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | Красный Крест СПб</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .auth-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Красный Крест">
+            <h1>Красный Крест <span>Санкт-Петербург</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="programs.html">Программы</a></li>
+                <li><a href="help.html">Как помочь</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn">Вход</a>
+            <a href="register.html" class="btn btn-primary">Регистрация</a>
+        </div>
+    </header>
+
+    <section class="section" style="padding: 100px 0;">
+        <div class="container">
+            <div class="auth-container">
+                <h2 style="text-align: center;">Регистрация</h2>
+                <form>
+                    <div class="form-group">
+                        <label>Имя</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Пароль</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+                    <p style="text-align: center; margin-top: 20px;">
+                        Уже есть аккаунт? <a href="login.html">Войдите</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>Красный Крест Санкт-Петербург - часть международного движения.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Санкт-Петербург, ул. Примерная, 123</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Красный Крест Санкт-Петербург</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

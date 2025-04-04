@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Программы | Красный Крест СПб</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .program-card {
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .program-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .program-content {
+            flex: 1;
+        }
+        .program-actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            align-items: stretch;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Красный Крест">
+            <h1>Красный Крест <span>Санкт-Петербург</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="programs.html" class="active">Программы</a></li>
+                <li><a href="help.html">Как помочь</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn">Вход</a>
+            <a href="register.html" class="btn btn-primary">Регистрация</a>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="section-title">Наши программы</h2>
+            
+            <div class="programs-grid">
+                <!-- Программа 1 -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <h3>Донорство крови</h3>
+                    <p>Организация регулярных донорских дней...</p>
+                    <ul>
+                        <li>Ежемесячные донорские акции</li>
+                        <li>Мобильные пункты забора крови</li>
+                    </ul>
+                    <a href="first-aid.html" class="btn btn-tr">Узнать больше</a>
+                </div>
+                
+                <!-- Программа 2 -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <h3>Курсы первой помощи</h3>
+                    <p>Обучение населения основам оказания первой медицинской помощи в различных ситуациях.</p>
+                    <ul>
+                        <li>Базовый курс первой помощи</li>
+                        <li>Специализированные курсы для педагогов</li>
+                        <li>Тренинги для корпоративных клиентов</li>
+                    </ul>
+                    <a href="first-aid.html" class="btn btn-tr">Узнать больше</a>
+                </div>
+                
+                <!-- Программа 3 -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Социальная поддержка</h3>
+                    <p>Помощь уязвимым категориям населения: пожилым людям, инвалидам, малоимущим семьям.</p>
+                    <ul>
+                        <li>Адресная помощь продуктами</li>
+                        <li>Социальное сопровождение</li>
+                        <li>Программы для бездомных</li>
+                    </ul>
+                    <a href="#" class="btn btn-tr">Узнать больше</a>
+                </div>
+                
+                <!-- Программа 4 -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-house-damage"></i>
+                    </div>
+                    <h3>Подготовка к ЧС</h3>
+                    <p>Обучение населения действиям в чрезвычайных ситуациях и гуманитарная помощь при катастрофах.</p>
+                    <ul>
+                        <li>Тренинги по эвакуации</li>
+                        <li>Наборы экстренной помощи</li>
+                        <li>Мобильные бригады реагирования</li>
+                    </ul>
+                    <a href="#" class="btn btn-tr">Узнать больше</a>
+                </div>
+                
+                <!-- Программа 5 -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Детские программы</h3>
+                    <p>Специальные проекты, направленные на поддержку детей в трудной жизненной ситуации.</p>
+                    <ul>
+                        <li>Программы для детей-инвалидов</li>
+                        <li>Летние лагеря</li>
+                        <li>Психологическая поддержка</li>
+                    </ul>
+                    <a href="#" class="btn btn-tr">Узнать больше</a>
+                </div>
+                
+                <!-- Программа 6 -->
+                <div class="program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-globe-europe"></i>
+                    </div>
+                    <h3>Международные проекты</h3>
+                    <p>Участие в международных гуманитарных миссиях и программах обмена опытом.</p>
+                    <ul>
+                        <li>Гуманитарные миссии</li>
+                        <li>Обучение за рубежом</li>
+                        <li>Международные конференции</li>
+                    </ul>
+                    <a href="#" class="btn btn-tr">Узнать больше</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>Красный Крест Санкт-Петербург - часть международного движения, оказывающего помощь людям в трудных ситуациях.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Быстрые ссылки</h3>
+                <ul>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="programs.html">Программы</a></li>
+                    <li><a href="help.html">Как помочь</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Санкт-Петербург, ул. Примерная, 123</p>
+                <p><i class="fas fa-phone"></i> +7 (812) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@redcross-spb.ru</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Красный Крест Санкт-Петербург. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

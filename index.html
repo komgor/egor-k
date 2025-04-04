@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Красный Крест Санкт-Петербург</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Стили для модального окна */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            overflow-y: auto;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 90%;
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        .close:hover {
+            color: var(--primary);
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Красный Крест">
+            <h1>Красный Крест <span>Санкт-Петербург</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="programs.html">Программы</a></li>
+                <li><a href="help.html">Как помочь</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn">Вход</a>
+            <a href="register.html" class="btn btn-primary">Регистрация</a>
+        </div>
+    </header>
+
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+            <h2>Помогаем людям в трудную минуту</h2>
+            <p>Присоединяйтесь к нашей миссии по спасению жизней и оказанию помощи нуждающимся</p>
+            <div class="hero-buttons">
+                <a href="donate.html" class="btn btn-large btn-primary">Пожертвовать</a>
+                <a href="volunteer.html" class="btn btn-large btn-secondary">Стать волонтером</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Быстрые ссылки -->
+    <section class="quick-links">
+        <div class="quick-links-container">
+            <a href="blood-donation.html" class="quick-link">
+                <i class="fas fa-tint"></i>
+                <span>Сдать кровь</span>
+            </a>
+            <a href="first-aid.html" class="quick-link">
+                <i class="fas fa-book-medical"></i>
+                <span>Курсы первой помощи</span>
+            </a>
+            <a href="volunteer.html" class="quick-link">
+                <i class="fas fa-hands-helping"></i>
+                <span>Стать волонтером</span>
+            </a>
+            <a href="suggest-news.html" class="quick-link">
+                <i class="fas fa-newspaper"></i>
+                <span>Предложить новость</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Новости -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Последние новости</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="images/news1.jpg" alt="Новость 1">
+                    <div class="news-content">
+                        <div class="news-date">15 марта 2025</div>
+                        <h3 class="news-title">Красный Крест оказал помощь пострадавшим от наводнения</h3>
+                        <p class="news-excerpt">Наши волонтеры доставили продукты и медикаменты в пострадавшие районы.</p>
+                        <a href="#" class="read-more open-news-modal" data-newsid="1">Читать далее</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="images/news2.jpg" alt="Новость 2">
+                    <div class="news-content">
+                        <div class="news-date">10 февраля 2025</div>
+                        <h3 class="news-title">Открытие нового центра донорства крови</h3>
+                        <p class="news-excerpt">В центре города открылся новый современный центр донорства крови.</p>
+                        <a href="#" class="read-more open-news-modal" data-newsid="2">Читать далее</a>
+                    </div>
+                </article>
+                <article class="news-card">
+                    <img src="images/news3.jpg" alt="Новость 3">
+                    <div class="news-content">
+                        <div class="news-date">5 января 2025</div>
+                        <h3 class="news-title">Курсы первой помощи для школьников</h3>
+                        <p class="news-excerpt">Более 200 школьников прошли обучение основам первой помощи.</p>
+                        <a href="#" class="read-more open-news-modal" data-newsid="3">Читать далее</a>
+                    </div>
+                </article>
+            </div>
+            <div style="text-align: center;">
+                <a href="news.html" class="btn btn-secondary">Все новости</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Программы -->
+    <section class="section" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Наши программы</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;">
+                    <i class="fas fa-heartbeat" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Здравоохранение</h3>
+                    <p style="margin-bottom: 20px; color: var(--dark); opacity: 0.8;">Программы медицинской помощи и донорства крови</p>
+                    <a href="programs.html#health" class="btn btn-small btn-primary">Подробнее</a>
+                </div>
+                <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Чрезвычайные ситуации</h3>
+                    <p style="margin-bottom: 20px; color: var(--dark); opacity: 0.8;">Действия при ЧС и помощь пострадавшим</p>
+                    <a href="programs.html#emergency" class="btn btn-small btn-primary">Подробнее</a>
+                </div>
+                <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center;">
+                    <i class="fas fa-graduation-cap" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                    <h3 style="margin-bottom: 15px;">Обучение</h3>
+                    <p style="margin-bottom: 20px; color: var(--dark); opacity: 0.8;">Курсы первой помощи и образовательные программы</p>
+                    <a href="programs.html#education" class="btn btn-small btn-primary">Подробнее</a>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="programs.html" class="btn btn-secondary">Все программы</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>Красный Крест Санкт-Петербург - часть международного движения, оказывающего помощь людям в трудных ситуациях.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Быстрые ссылки</h3>
+                <ul>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="programs.html">Программы</a></li>
+                    <li><a href="help.html">Как помочь</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Санкт-Петербург, ул. Примерная, 123</p>
+                <p><i class="fas fa-phone"></i> +7 (812) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@redcross-spb.ru</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Красный Крест Санкт-Петербург. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно новостей -->
+    <div id="news-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-news-content">
+                <!-- Контент будет загружен динамически -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Обработка модального окна новостей
+        document.addEventListener('DOMContentLoaded', function() {
+            // Обработка кнопок "Читать далее"
+            document.querySelectorAll('.open-news-modal').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const newsId = this.getAttribute('data-newsid');
+                    showNewsModal(newsId);
+                });
+            });
+
+            // Закрытие модального окна
+            document.querySelector('.close').addEventListener('click', function() {
+                document.getElementById('news-modal').style.display = 'none';
+            });
+
+            // Закрытие при клике вне окна
+            window.addEventListener('click', function(e) {
+                if (e.target == document.getElementById('news-modal')) {
+                    document.getElementById('news-modal').style.display = 'none';
+                }
+            });
+
+            // Функция показа модального окна с новостью
+            function showNewsModal(newsId) {
+                // Данные новостей (в реальном проекте можно загружать через AJAX)
+                const newsData = {
+                    '1': {
+                        title: 'Красный Крест оказал помощь пострадавшим от наводнения',
+                        date: '15 марта 2025',
+                        content: '<p>Волонтеры Красного Креста Санкт-Петербурга оперативно организовали пункты временного размещения и доставили гуманитарную помощь в районы, пострадавшие от сильного наводнения. Было распределено более 500 продуктовых наборов и 200 комплектов первой необходимости.</p><p>Наши специалисты работали круглосуточно, обеспечивая пострадавших теплой одеждой, медикаментами и психологической поддержкой. Особое внимание уделялось детям и пожилым людям, оказавшимся в зоне бедствия.</p>',
+                        image: 'images/news1-large.jpg'
+                    },
+                    '2': {
+                        title: 'Открытие нового центра донорства крови',
+                        date: '10 февраля 2025',
+                        content: '<p>Сегодня в центре города открылся новый современный центр донорства крови, оборудованный по последним стандартам. Центр сможет принимать до 100 доноров ежедневно.</p><p>Новый центр оснащен комфортными донорскими креслами, современным оборудованием для забора крови и зоной отдыха для доноров. Особое внимание уделено созданию приятной атмосферы для посетителей.</p>',
+                        image: 'images/news2-large.jpg'
+                    },
+                    '3': {
+                        title: 'Курсы первой помощи для школьников',
+                        date: '5 января 2025',
+                        content: '<p>Более 200 школьников прошли обучение основам первой помощи в рамках специальной программы Красного Креста. Курсы проводились в 10 школах города.</p><p>Программа обучения включала в себя основы сердечно-легочной реанимации, помощь при кровотечениях и ожогах, а также действия при различных чрезвычайных ситуациях. По окончании курсов все участники получили сертификаты.</p>',
+                        image: 'images/news3-large.jpg'
+                    }
+                };
+
+                const news = newsData[newsId] || newsData['1'];
+                const modalContent = `
+                    <h2>${news.title}</h2>
+                    <div class="news-date">${news.date}</div>
+                    <img src="${news.image}" alt="${news.title}" style="width:100%; max-height:300px; object-fit:cover; margin:15px 0;">
+                    <div class="news-text">${news.content}</div>
+                `;
+                
+                document.getElementById('modal-news-content').innerHTML = modalContent;
+                document.getElementById('news-modal').style.display = 'block';
+            }
+
+            // Простая функция для кнопок без функционала
+            document.querySelectorAll('a[href="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Эта функция находится в разработке');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

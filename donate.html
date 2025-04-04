@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пожертвовать | Красный Крест СПб</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Стили для модального окна */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .payment-method {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .payment-method.selected {
+            border-color: var(--primary);
+            background-color: rgba(227, 6, 19, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Красный Крест">
+            <h1>Красный Крест <span>Санкт-Петербург</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="programs.html">Программы</a></li>
+                <li><a href="help.html">Как помочь</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn">Вход</a>
+            <a href="register.html" class="btn btn-primary">Регистрация</a>
+        </div>
+    </header>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="section-title">Сделать пожертвование</h2>
+            
+            <div class="donate-options">
+                <div class="donate-card">
+                    <h3>Разовое пожертвование</h3>
+                    <input type="number" placeholder="Сумма в рублях" class="form-control" id="donation-amount">
+                    <button id="donate-btn" class="btn btn-primary" style="margin-top: 20px;">Пожертвовать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно оплаты -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Оформление пожертвования</h3>
+            <p>Сумма: <span id="modal-amount">500</span> рублей</p>
+            
+            <h4>Выберите способ оплаты:</h4>
+            <div class="payment-methods">
+                <div class="payment-method" data-method="card">
+                    <i class="fas fa-credit-card" style="font-size: 2rem;"></i>
+                    <p>Банковская карта</p>
+                </div>
+                <div class="payment-method" data-method="sbp">
+                    <i class="fas fa-mobile-alt" style="font-size: 2rem;"></i>
+                    <p>СБП</p>
+                </div>
+                <div class="payment-method" data-method="qiwi">
+                    <i class="fas fa-wallet" style="font-size: 2rem;"></i>
+                    <p>QIWI Кошелек</p>
+                </div>
+                <div class="payment-method" data-method="yoomoney">
+                    <i class="fas fa-ruble-sign" style="font-size: 2rem;"></i>
+                    <p>ЮMoney</p>
+                </div>
+            </div>
+            
+            <div id="card-details" style="display: none; margin-top: 20px;">
+                <div class="form-group">
+                    <label>Номер карты</label>
+                    <input type="text" placeholder="0000 0000 0000 0000" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Срок действия</label>
+                    <input type="text" placeholder="ММ/ГГ" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>CVV/CVC</label>
+                    <input type="text" placeholder="123" class="form-control">
+                </div>
+            </div>
+            
+            <button id="confirm-payment" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Подтвердить оплату</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>Красный Крест Санкт-Петербург - часть международного движения.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Санкт-Петербург, ул. Примерная, 123</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Красный Крест Санкт-Петербург</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

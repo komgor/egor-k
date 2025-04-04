@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости | Красный Крест СПб</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .news-filters .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        [data-category] {
+            display: none;
+        }
+        .active[data-category] {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Красный Крест">
+            <h1>Красный Крест <span>Санкт-Петербург</span></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="news.html" class="active">Новости</a></li>
+                <li><a href="programs.html">Программы</a></li>
+                <li><a href="help.html">Как помочь</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <a href="login.html" class="btn">Вход</a>
+            <a href="register.html" class="btn btn-primary">Регистрация</a>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="section-title">Новости</h2>
+            
+            <!-- Фильтры новостей -->
+            <div class="news-filters">
+                <button class="btn active" data-filter="all">Все</button>
+                <button class="btn" data-filter="events">События</button>
+                <button class="btn" data-filter="donation">Донорство</button>
+                <button class="btn" data-filter="education">Обучение</button>
+            </div>
+            
+            <!-- Список новостей -->
+            <div class="news-grid">
+                <!-- Новость 1 -->
+                <div class="news-card" data-category="events">
+                    <div class="news-date">15 марта 2025</div>
+                    <h3 class="news-title">Красный Крест оказал помощь пострадавшим от наводнения</h3>
+                    <p class="news-excerpt">Волонтеры доставили продукты и медикаменты в пострадавшие районы Ленинградской области.</p>
+                </div>
+                
+                <!-- Новость 2 -->
+                <div class="news-card" data-category="donation">
+                    <div class="news-date">10 февраля 2025</div>
+                    <h3 class="news-title">Открытие нового центра донорства крови</h3>
+                    <p class="news-excerpt">В центре города открылся новый современный центр донорства крови.</p>
+                </div>
+                
+                <!-- Новость 3 -->
+                <div class="news-card" data-category="education">
+                    <div class="news-date">5 января 2025</div>
+                    <h3 class="news-title">Курсы первой помощи для школьников</h3>
+                    <p class="news-excerpt">200 учащихся прошли обучение основам первой медицинской помощи.</p>
+                </div>
+                
+                <!-- Новость 4 -->
+                <div class="news-card" data-category="donation">
+                    <div class="news-date">20 декабря 2024</div>
+                    <h3 class="news-title">Акция "День донора"</h3>
+                    <p class="news-excerpt">150 человек сдали кровь в мобильных пунктах по всему городу.</p>
+                </div>
+                
+                <!-- Новость 5 -->
+                <div class="news-card" data-category="events">
+                    <div class="news-date">10 декабря 2024</div>
+                    <h3 class="news-title">Новый набор волонтеров</h3>
+                    <p class="news-excerpt">50 добровольцев прошли обучение для участия в программах.</p>
+                </div>
+                
+                <!-- Новость 6 -->
+                <div class="news-card" data-category="events">
+                    <div class="news-date">25 ноября 2024</div>
+                    <h3 class="news-title">Гуманитарная помощь для беженцев</h3>
+                    <p class="news-excerpt">Доставлены медикаменты и предметы первой необходимости.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>Красный Крест Санкт-Петербург - часть международного движения, оказывающего помощь людям в трудных ситуациях.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Быстрые ссылки</h3>
+                <ul>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="programs.html">Программы</a></li>
+                    <li><a href="help.html">Как помочь</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Санкт-Петербург, ул. Примерная, 123</p>
+                <p><i class="fas fa-phone"></i> +7 (812) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@redcross-spb.ru</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Красный Крест Санкт-Петербург. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Рабочие фильтры новостей
+            const filterButtons = document.querySelectorAll('.news-filters .btn');
+            const newsCards = document.querySelectorAll('.news-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Удаляем активный класс у всех кнопок
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс текущей кнопке
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.filter;
+                    
+                    // Фильтрация новостей
+                    newsCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
